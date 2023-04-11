@@ -23,30 +23,30 @@ public class MovePlayer : MonoBehaviour
 
         Vector3 direction = targetPos - transform.position; // calcule la direction entre le personnage et la position de la souris
         direction.y = 0; // ne prend pas en compte la direction verticale
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), speed * Time.deltaTime); // dirige le personnage vers la position de la souris
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), speed * Time.deltaTime); // dirige le personnage vers la position de la sourissZZZ
         
         if (Input.GetKey(KeyCode.Z)) // move up
         {
-            Vector3 movement = transform.forward * speed * Time.deltaTime; // create a movement vector that moves the object forward in its local space
-            transform.Translate(movement, Space.Self); // move the object in the direction of the movement vector
+            Vector3 movement = new Vector3(0, 0, speed * Time.deltaTime);
+            transform.Translate(movement, Space.World); // move the object in the direction of the movement vector
         }
 
         if (Input.GetKey(KeyCode.Q)) // move left
         {
-            Vector3 movement = -transform.right * speed * Time.deltaTime; // create a movement vector that moves the object left in its local space
-            transform.Translate(movement, Space.Self); // move the object in the direction of the movement vector
+            Vector3 movement = new Vector3(-speed * Time.deltaTime, 0, 0);
+            transform.Translate(movement, Space.World); // move the object in the direction of the movement vector
         }
 
         if (Input.GetKey(KeyCode.S)) // move back
         {
-            Vector3 movement = -transform.forward * speed * Time.deltaTime; // create a movement vector that moves the object back in its local space
-            transform.Translate(movement, Space.Self); // move the object in the direction of the movement vector
+            Vector3 movement = new Vector3(0, 0, -speed * Time.deltaTime);
+            transform.Translate(movement, Space.World); // move the object in the direction of the movement vector
         }
 
         if (Input.GetKey(KeyCode.D)) // move right
         {
-            Vector3 movement = transform.right * speed * Time.deltaTime; // create a movement vector that moves the object right in its local space
-            transform.Translate(movement, Space.Self); // move the object in the direction of the movement vector
+            Vector3 movement = new Vector3(speed * Time.deltaTime, 0, 0);
+            transform.Translate(movement, Space.World); // move the object in the direction of the movement vector
         }
         
         if (Input.GetKeyDown(KeyCode.F)) // toggle the flashlight
