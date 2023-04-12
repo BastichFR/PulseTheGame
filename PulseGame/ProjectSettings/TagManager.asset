@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - flashlight
+  - Weapon
+  - AK47
+  - UZI
+  - M1911
+  - M4_8
   layers:
   - Default
   - TransparentFX

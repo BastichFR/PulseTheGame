@@ -350,6 +350,7 @@
 "Assets/Scripts/Arme.cs"
 "Assets/Scripts/CameraFollow.cs"
 "Assets/Scripts/Flashlight.cs"
+"Assets/Scripts/Inventory.cs"
 "Assets/Scripts/MovePlayer.cs"
 -langversion:9.0
 
