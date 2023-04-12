@@ -49,7 +49,7 @@ public class MovePlayer : MonoBehaviour
             transform.Translate(movement, Space.World); // move the object in the direction of the movement vector
         }
         
-        if (Input.GetKeyDown(KeyCode.F)) // toggle the flashlight
+        if (Input.GetKeyDown(KeyCode.Mouse1)) // toggle the flashlight
         {
             flashlight.SetActive(!flashlight.activeSelf);
         }

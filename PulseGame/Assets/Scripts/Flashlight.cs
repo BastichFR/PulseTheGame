@@ -29,7 +29,7 @@ public class Flashlight : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.F)) // toggle the flashlight
+        if (Input.GetKeyDown(KeyCode.Mouse1)) // toggle the flashlight
         {
             isActive = !isActive;
             lightSource.SetActive(isActive);
