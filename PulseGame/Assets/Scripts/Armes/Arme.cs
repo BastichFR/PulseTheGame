@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Arme : MonoBehaviour
+public class Arme : Player
 {
     public GameObject ballePrefab;          // préfab de la balle
     public Transform pointDeTir;            // point d'ou part la balle

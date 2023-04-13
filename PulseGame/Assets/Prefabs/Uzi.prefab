@@ -140,7 +140,7 @@ MonoBehaviour:
   chargeurActuel: 20
   degats: 33
   fireRate: 0.06
-  reloadTime: 1
+  reloadTime: 2
 --- !u!1 &3796688238295768980
 GameObject:
   m_ObjectHideFlags: 0

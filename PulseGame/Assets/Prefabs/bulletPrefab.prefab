@@ -205,6 +205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6381637608629800180}
   - component: {fileID: -4988200860223519896}
+  - component: {fileID: -7138057741303019549}
   m_Layer: 0
   m_Name: bulletPrefab
   m_TagString: Untagged
@@ -247,6 +248,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-7138057741303019549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7495704737701831300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3871d4c4b4aee7a4e940cf85f454582c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballePrefab: {fileID: 0}
+  pointDeTir: {fileID: 0}
+  forceDeTir: 5000
+  chargeurCapacity: 0
+  nombreChargeurs: 0
+  chargeurActuel: 0
+  degats: 0
+  fireRate: 0
+  reloadTime: 0
 --- !u!1 &8055030435238684741
 GameObject:
   m_ObjectHideFlags: 0

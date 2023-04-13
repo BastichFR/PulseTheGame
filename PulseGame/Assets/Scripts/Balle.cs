@@ -13,7 +13,7 @@ public class Balle : Arme
             Player player = collision.gameObject.GetComponent<Player>();
             
             // Si le joueur a un script Joueur, on lui inflige des dégâts
-            if (player != null)
+            if (player != null && player.team != this.team)
             {
                 player.TakeDamage(degats);
             }
