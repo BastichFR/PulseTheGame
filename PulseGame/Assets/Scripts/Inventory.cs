@@ -34,6 +34,7 @@ public class Inventory : Player {
         }
         firstWeapon.transform.SetParent(transform);
         secondWeapon.transform.SetParent(transform);
+
         DisplayCurrentWeapon();
     }
     
