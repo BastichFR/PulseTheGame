@@ -9,9 +9,17 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
+PulseGame/[Ll]ibrary/
+PulseGame/[Tt]emp/
+PulseGame/[Oo]bj/
+PulseGame/[Bb]uild/
+PulseGame/[Bb]uilds/
+PulseGame/[Ll]ogs/
+PulseGame/[Mm]emoryCaptures/
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
+!PulseGame/[Aa]ssets/**/*.meta
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
