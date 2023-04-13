@@ -2,22 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour {
-    public enum Team {
-        Team1,
-        Team2
-    }
+public class Inventory : Player {
+    
 
     private int currentWeaponIndex = 0;
-    private GameObject firstWeapon;
-    private GameObject secondWeapon;
-
-    public Team team;
-
+    
     public GameObject Gun;
+
+    private GameObject firstWeapon;
     public GameObject AK47Prefab;
-    public GameObject UZIPrefab;
     public GameObject M4_8Prefab;
+
+    private GameObject secondWeapon;
+    public GameObject UZIPrefab;
     public GameObject M1911Prefab;
 
     private void Start() {

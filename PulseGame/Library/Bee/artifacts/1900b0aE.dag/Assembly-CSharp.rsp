@@ -347,11 +347,17 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/Scripts/Arme.cs"
+"Assets/Scripts/Armes/AK47.cs"
+"Assets/Scripts/Armes/Arme.cs"
+"Assets/Scripts/Armes/M1911.cs"
+"Assets/Scripts/Armes/M4_8.cs"
+"Assets/Scripts/Armes/UZI.cs"
+"Assets/Scripts/Balle.cs"
 "Assets/Scripts/CameraFollow.cs"
 "Assets/Scripts/Flashlight.cs"
 "Assets/Scripts/Inventory.cs"
 "Assets/Scripts/MovePlayer.cs"
+"Assets/Scripts/Player.cs"
 -langversion:9.0
 
 /deterministic
