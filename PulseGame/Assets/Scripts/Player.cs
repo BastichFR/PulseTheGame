@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
         Team2
     }
 
-    public Team team;
+    protected Team team;
 
     int currentHealth = 125;
     private GameObject flashlight; // assign the flashlight GameObject in the Inspector
