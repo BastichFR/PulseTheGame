@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Inventory : Player {
     
-
     private int currentWeaponIndex = 0;
     
     public GameObject Gun;
@@ -16,6 +15,9 @@ public class Inventory : Player {
     private GameObject secondWeapon;
     public GameObject UZIPrefab;
     public GameObject M1911Prefab;
+
+    private AudioSource SwitchMain;
+    private AudioSource SwitchSecond;
 
     private void Start() {
         Vector3 gunPosition = Gun.transform.position;
@@ -35,7 +37,11 @@ public class Inventory : Player {
         firstWeapon.transform.SetParent(transform);
         secondWeapon.transform.SetParent(transform);
 
-        DisplayCurrentWeapon();
+        SwitchSecond = secondWeapon.transform.Find("AudioList/WeaponChange").GetComponent<AudioSource>();
+        SwitchMain = firstWeapon.transform.Find("AudioList/WeaponChange").GetComponent<AudioSource>();      
+
+        firstWeapon.SetActive(true);
+        secondWeapon.SetActive(false);
     }
     
     void Update()
@@ -45,7 +51,7 @@ public class Inventory : Player {
         {
             if (currentWeaponIndex != 0){
                 currentWeaponIndex = 0;
-                DisplayCurrentWeapon();
+                StartCoroutine(DisplayCurrentWeapon());
             }
         }
 
@@ -54,29 +60,26 @@ public class Inventory : Player {
         {
             if (currentWeaponIndex != 1){
                 currentWeaponIndex = 1;
-                DisplayCurrentWeapon();
+                StartCoroutine(DisplayCurrentWeapon());
             }
         }
     }
 
-    void DisplayCurrentWeapon()
+    IEnumerator DisplayCurrentWeapon()
     {
-        if(firstWeapon == null || secondWeapon == null) {
-            Debug.LogError("Weapon objects are not set");
-            return;
-        }
-        
         // Désactivation de toutes les armes dans la liste
-
         switch(currentWeaponIndex) {
             case 0 : 
-                firstWeapon.SetActive(true);
                 secondWeapon.SetActive(false);
+                firstWeapon.SetActive(true);
+                SwitchMain.PlayOneShot(SwitchMain.clip);
                 break;
             case 1 : 
                 firstWeapon.SetActive(false);
                 secondWeapon.SetActive(true);
+                SwitchSecond.PlayOneShot(SwitchSecond.clip);
                 break;
         }
+        yield return new WaitForSeconds(1f);
     }
 }

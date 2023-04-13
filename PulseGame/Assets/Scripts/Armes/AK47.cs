@@ -3,6 +3,28 @@ using System.Collections;
 
 public class AK47 : Arme
 {
+    protected override void Start()
+    {
+        chargeurCapacity = 30;
+        nombreChargeurs = 8;
+        degats = 40;
+        fireRate = 0.07f;
+        reloadTime = 1f;
+
+        semiAutomatic = true;
+
+        base.Start();  // appelle la méthode Start() de la classe parent
+    }
+}
+
+
+/*
+
+using UnityEngine;
+using System.Collections;
+
+public class AK47 : Arme
+{
     private float timeSinceLastShot = 0f;  // temps écoulé depuis le dernier tir
 
     protected override void Start()
@@ -53,3 +75,4 @@ public class AK47 : Arme
         }
     }
 }
+*/

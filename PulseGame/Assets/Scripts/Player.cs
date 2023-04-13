@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
         Team2
     }
 
-    protected Team team;
+    protected Team team = Team.Team1;
 
     int currentHealth = 125;
 

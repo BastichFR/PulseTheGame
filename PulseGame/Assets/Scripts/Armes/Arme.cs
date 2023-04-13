@@ -13,23 +13,37 @@ public class Arme : Player
        
     public int degats;                      // dégats de l'arme
        
-    public float fireRate;                  // cadence de tire
-    protected bool semiAutomatic = false;   // tire en semi-automatic (rester appuyé)
-    protected bool canFire = true;          // peut tirer
+    protected float fireRate;                  // cadence de tire
+    protected bool semiAutomatic;   // tire en semi-automatic (rester appuyé)
+    protected bool canFire = true;          // peut tirer (utilisé lorsqu'on vient de tirer pour le fireRate)
        
-    public float reloadTime;                // temps de reload
+    protected float reloadTime;                // temps de reload
     protected bool isReloading = false;     // est en train de reload
+
+    private float timeSinceLastShot;   // temps écoulé depuis le dernier tir
+
+    protected AudioSource WeaponFire;
+    protected AudioSource WeaponReload;
+    protected AudioSource WeaponEmpty;
+
 
 
     protected virtual void Start()    
     {
+        WeaponFire   = GameObject.Find("AudioList/WeaponFire").GetComponent<AudioSource>();
+        WeaponReload = GameObject.Find("AudioList/WeaponReload").GetComponent<AudioSource>();
+        WeaponEmpty  = GameObject.Find("AudioList/WeaponEmpty").GetComponent<AudioSource>();
+
+        timeSinceLastShot = 0f;
+
         chargeurActuel = chargeurCapacity;   // mise en place du chargeur
     }
 
     protected virtual void Update()
     {
-        // si on appuie pour tirer, qu'on est pas en train de reload et qu'il nous reste des balles
-        if (Input.GetButtonDown("Fire1") && canFire && !isReloading && chargeurActuel > 0 && nombreChargeurs > 0)
+        timeSinceLastShot += Time.deltaTime;  // met à jour le temps écoulé depuis le dernier tir
+
+        if (Input.GetButton("Fire1") && canFire && !isReloading && chargeurActuel > 0 && nombreChargeurs > 0)
         {
             if (semiAutomatic)
             {
@@ -49,24 +63,33 @@ public class Arme : Player
 
     protected virtual void Tirer()
     {
-        chargeurActuel -= 1;
-        GameObject balle = Instantiate(ballePrefab, pointDeTir.position, pointDeTir.rotation);
-        Rigidbody rb = balle.GetComponent<Rigidbody>();
-        rb.AddForce(pointDeTir.forward * forceDeTir);
-        Destroy(balle, 0.3f);
+        if (timeSinceLastShot >= fireRate)  // vérifie si la cadence de tir est respectée
+        {
+            WeaponFire.PlayOneShot(WeaponFire.clip);
+            timeSinceLastShot = 0f;  // remet à zéro le temps écoulé depuis le dernier tir
+            chargeurActuel -= 1;
+            GameObject balle = Instantiate(ballePrefab, pointDeTir.position, pointDeTir.rotation);
+            Rigidbody rb = balle.GetComponent<Rigidbody>();
+            rb.AddForce(pointDeTir.forward * forceDeTir);
+            Destroy(balle, 0.3f);
+        }
     }
 
     protected virtual IEnumerator Fire()
     {
         canFire = false;
-        Tirer();
-        yield return new WaitForSeconds(fireRate);
+        while (Input.GetButton("Fire1") && chargeurActuel > 0 && nombreChargeurs > 0)
+        {
+            Tirer();
+            yield return new WaitForSeconds(fireRate);
+        }
         canFire = true;
     }
 
     protected virtual IEnumerator Reload()
     {
         isReloading = true;
+        WeaponReload.Play();
         yield return new WaitForSeconds(reloadTime);
         chargeurActuel = chargeurCapacity;
         nombreChargeurs -= 1;

@@ -5,15 +5,15 @@ using UnityEngine;
 public class Flashlight : MonoBehaviour
 {
     private GameObject lightSource; 
-    public AudioSource soundEffect;
-    private bool isActive = false;
+    private AudioSource soundEffect;
+    private bool isActive = true;
 
     // Start is called before the first frame update
     void Start()
     {
         lightSource = GameObject.FindWithTag("flashlight");
         lightSource.SetActive(isActive); // make sure the light source is off at start
-        soundEffect = soundEffect = GameObject.Find("FlashSound").GetComponent<AudioSource>();
+        soundEffect = GameObject.Find("FlashSound").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -21,9 +21,9 @@ public class Flashlight : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse1)) // toggle the flashlight
         {
+            soundEffect.Play();
             isActive = !isActive;
             lightSource.SetActive(isActive);
-            soundEffect.Play(); 
         }
     }
 }

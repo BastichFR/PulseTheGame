@@ -431,6 +431,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2449012857873356894, guid: 1a20dbde33112d148baa0a1a31ee0aff, type: 3}
+      propertyPath: SwitchFirst
+      value: 
+      objectReference: {fileID: 8300000, guid: 5e7f4365a70fc47469c6912d42838154, type: 3}
+    - target: {fileID: 2449012857873356894, guid: 1a20dbde33112d148baa0a1a31ee0aff, type: 3}
+      propertyPath: SwitchSecond
+      value: 
+      objectReference: {fileID: 8300000, guid: 1485b41a6e7980d4fb672f0b5558a3ac, type: 3}
+    - target: {fileID: 2449012858006540033, guid: 1a20dbde33112d148baa0a1a31ee0aff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.537
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449012858006540033, guid: 1a20dbde33112d148baa0a1a31ee0aff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.136
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449012858006540033, guid: 1a20dbde33112d148baa0a1a31ee0aff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.131
+      objectReference: {fileID: 0}
     - target: {fileID: 2449012858073146869, guid: 1a20dbde33112d148baa0a1a31ee0aff, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -441,7 +461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2449012858073146869, guid: 1a20dbde33112d148baa0a1a31ee0aff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.137
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2449012858073146869, guid: 1a20dbde33112d148baa0a1a31ee0aff, type: 3}
       propertyPath: m_LocalPosition.z
@@ -473,6 +493,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2449012858073146869, guid: 1a20dbde33112d148baa0a1a31ee0aff, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449012859816720091, guid: 1a20dbde33112d148baa0a1a31ee0aff, type: 3}
+      propertyPath: m_Volume
+      value: 0.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 2449012859816720091, guid: 1a20dbde33112d148baa0a1a31ee0aff, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 03cb4fc8b5ed38747a1d3af452911f04, type: 3}
+    - target: {fileID: 2449012859816720091, guid: 1a20dbde33112d148baa0a1a31ee0aff, type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

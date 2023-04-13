@@ -13,6 +13,8 @@ public class M1911 : Arme
         fireRate = 0f;
         reloadTime = 1f;
 
+        semiAutomatic = false;
+
         base.Start();  // appelle la méthode Start() de la classe parent
     }
 }
