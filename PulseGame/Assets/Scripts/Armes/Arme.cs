@@ -42,8 +42,6 @@ public class Arme : Player
     
     protected virtual void Update()
     {
-        Debug.Log("capacity :" + chargeurActuel + " - TotalMun :" + totalMun);
-
         timeSinceLastShot += Time.deltaTime;  // met à jour le temps écoulé depuis le dernier tir
         
         if (Input.GetButton("Fire1") && canFire && !isReloading)
