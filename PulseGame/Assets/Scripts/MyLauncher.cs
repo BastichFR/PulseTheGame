@@ -7,10 +7,12 @@ using Photon.Pun;
 
 public class MyLauncher : MonoBehaviourPunCallbacks
 {
-    public Button btn;
+    public Button btnred;
+    public Button btnblue;
 
     public Text feedbackText;
     private byte maxPlayersPerRoom = 6;
+    private byte maxPlayerPerTeam = 3;
     bool isConnecting;
     string gameVersion = "1";
 
@@ -28,7 +30,14 @@ public class MyLauncher : MonoBehaviourPunCallbacks
 
         isConnecting = true;
 
-        btn.interactable = false;
+        if (btnblue.IsActive())
+        {
+            btnblue.interactable = false;
+        }
+        if (btnred.IsActive())
+        {
+            btnred.interactable = false;
+        }
 
 
         if (PhotonNetwork.IsConnected)
@@ -83,7 +92,8 @@ public class MyLauncher : MonoBehaviourPunCallbacks
 
 
         isConnecting = false;
-        btn.interactable = true;
+        btnred.interactable = true;
+        btnblue.interactable = true;
 
     }
 

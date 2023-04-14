@@ -5,14 +5,13 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.SceneManagement;
 
+
+
 public class GameManager : MonoBehaviourPunCallbacks
 {
     public GameObject playerPrefabBlue;
     public GameObject playerPrefabRed;
     public Player player;
-
-
-
 
     void Start()
     {
@@ -24,7 +23,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             if (playerPrefabRed != null)
             {
-                PhotonNetwork.Instantiate(this.playerPrefabRed.name, new Vector3(40.65236f, 7.889f, 41.143f), Quaternion.identity, 1);
+                PhotonNetwork.Instantiate(this.playerPrefabRed.name, new Vector3(40.65236f, 7.889f, 41.143f), Quaternion.identity, 0);
 
             }
         }
@@ -55,3 +54,4 @@ public class GameManager : MonoBehaviourPunCallbacks
         Application.Quit();
     }
 }
+
