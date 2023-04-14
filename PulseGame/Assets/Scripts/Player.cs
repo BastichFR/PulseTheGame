@@ -9,24 +9,20 @@ public class Player : MonoBehaviour
         Team2
     }
 
-    protected Team team;
+    protected Team team = Team.Team1;
 
     int currentHealth = 125;
-    private GameObject flashlight; // assign the flashlight GameObject in the Inspector
 
     // Start is called before the first frame update
     void Start()
     {
-        flashlight = GameObject.FindWithTag("flashlight");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1)) // toggle the flashlight
-        {
-            flashlight.SetActive(!flashlight.activeSelf);
-        }
+        
     }
 
     public void TakeDamage(int amount)
