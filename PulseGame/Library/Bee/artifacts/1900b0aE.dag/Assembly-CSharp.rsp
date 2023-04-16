@@ -352,12 +352,12 @@
 "Assets/Scripts/Armes/M1911.cs"
 "Assets/Scripts/Armes/M4_8.cs"
 "Assets/Scripts/Armes/UZI.cs"
-"Assets/Scripts/Balle.cs"
-"Assets/Scripts/CameraFollow.cs"
-"Assets/Scripts/Flashlight.cs"
-"Assets/Scripts/Inventory.cs"
-"Assets/Scripts/MovePlayer.cs"
-"Assets/Scripts/Player.cs"
+"Assets/Scripts/Player/Balle.cs"
+"Assets/Scripts/Player/CameraFollow.cs"
+"Assets/Scripts/Player/Flashlight.cs"
+"Assets/Scripts/Player/Inventory.cs"
+"Assets/Scripts/Player/MovePlayer.cs"
+"Assets/Scripts/Player/Player.cs"
 -langversion:9.0
 
 /deterministic

@@ -10,7 +10,7 @@ public class M1911 : Arme
         chargeurCapacity = 8;
         nombreChargeurs = 7;
         degats = 55;
-        fireRate = 0f;
+        fireRate = 0.01f;
         reloadTime = 1f;
 
         semiAutomatic = false;
