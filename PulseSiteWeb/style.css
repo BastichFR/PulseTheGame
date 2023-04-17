@@ -6,12 +6,22 @@ body
 	background-attachment: fixed;
 }
 
-#title:hover, #text:hover, #text > #title:hover
+
+/* - * does not seem to work to target ids - */
+#title:hover, #text > *:hover, #text > #title:hover
 {
 	color: #ffffff;
 }
 
+#text > * > a:hover
+{
+	color: #bbbbff;
+	padding-left: 0.4%;
+	padding-right: 0.3%;
+}
 
+
+/* Different ids */
 
 #title
 {
@@ -27,39 +37,11 @@ body
 	margin-bottom: 5%;
 }
 
-
-#text > p
-{
-	margin-top: 0%;
-	margin-bottom: 0%;
-	padding-bottom: 1%;
-}
-
-#text > p:last-child
-{
-	padding-bottom: 2%;
-}
-
-#text > #title
-{
-	/* text style */
-	color: rgba(255,255,255,0.65);
-	font-size: 2em;
-	font-weight: 550;
-	transition: color 2s;
-
-	/* box style (setting it undo the #title setting) */
-	margin-top: 0%;
-	margin-bottom: 0%;
-	padding-bottom: 2%;
-}
-
 #text
 {
 	/* text style */
 	color: rgba(255,255,255,0.6);
 	font-size: 2em;
-	transition: color 2s;
 	text-align: center;
 
 	/* box style */
@@ -80,7 +62,9 @@ body
 	padding-right: 2.5%;
 }
 
+
 /* Used to alternate text-align between paragraphs */
+
 #text:nth-child(even), #text:nth-child(even) > #title
 {
 	margin-right: 20%;
@@ -93,8 +77,47 @@ body
 	text-align: end;
 }
 
-ul
+
+
+/* Elements in #text (id used with div) */
+
+#text > a, #text > p > a
+{
+	color: rgba(255,255,255,0.85);
+	transition: color 2s, padding 1s ease;
+	text-decoration: none;
+}
+
+#text > p
+{
+	margin-top: 0%;
+	margin-bottom: 0%;
+	padding-bottom: 1%;
+	transition: color 2s;
+}
+
+#text > p:last-child
+{
+	padding-bottom: 2%;
+}
+
+#text > ul
 {
 	margin-top: -0.1%;
 	list-style: none;
+	transition: color 2s;
+}
+
+#text > #title
+{
+	/* text style */
+	color: rgba(255,255,255,0.65);
+	font-size: 2em;
+	font-weight: 550;
+	transition: color 2s;
+
+	/* box style (setting it undo the #title setting) */
+	margin-top: 0%;
+	margin-bottom: 0%;
+	padding-bottom: 2%;
 }
