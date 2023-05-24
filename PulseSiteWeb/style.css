@@ -6,38 +6,7 @@ body
 	background-attachment: fixed;
 }
 
-
-/* - * does not seem to work to target ids - */
-#title:hover, #text > *:hover, #text > #title:hover
-{
-	color: #ffffff;
-}
-
-#text > * > a:hover
-{
-	color: #bbbbff;
-	padding-left: 0.4%;
-	padding-right: 0.3%;
-}
-
-
-/* Different ids */
-
-#title
-{
-	/* text style */
-	color: rgba(255,255,255,0.75);
-	font-size: 5em;
-	font-weight: 700;
-	text-align: center;
-	transition: color 3s;
-
-	/* box style - margin */
-	margin-top: 5%;
-	margin-bottom: 5%;
-}
-
-#text
+div
 {
 	/* text style */
 	color: rgba(255,255,255,0.6);
@@ -48,6 +17,55 @@ body
 	background-color: #131533;
 	border-radius: 12px;
 	overflow: hidden;
+}
+
+
+/* - * does not seem to work to target ids - */
+#title:hover, #text *:not(ul):hover, #text > #title:hover
+{
+	color: #ffffff;
+}
+
+#text a:hover
+{
+	color: #bbbbff;
+}
+
+#text * > a:hover
+{
+	padding-left: 0.4%;
+	padding-right: 0.3%;
+}
+
+
+::selection
+{
+	background-color: #0000;
+}
+
+
+/* Different ids */
+
+#title
+{
+	font-size: 7em;
+	margin-bottom: 10%;
+
+	/* Inherit styles */
+
+	/* text style */
+	color: rgba(255,255,255,0.75);
+	font-weight: 700;
+	text-align: center;
+	transition: color 3s;
+
+	/* box style - margin */
+	margin-top: 5%;
+}
+
+#text
+{
+	border: solid;
 
 	/* box style - margin */
 	margin-top: 2.5%;
@@ -62,16 +80,24 @@ body
 	padding-right: 2.5%;
 }
 
+#text > #title
+{
+	/* text style */
+	font-size: 5em;
+
+	/* box style - margin */
+	margin-bottom: 5%;
+}
 
 /* Used to alternate text-align between paragraphs */
 
-#text:nth-child(even), #text:nth-child(even) > #title
+#text:nth-child(2n), #text:nth-child(2n) > #title
 {
 	margin-right: 20%;
 	text-align: start;
 }
 
-#text:nth-child(odd), #text:nth-child(odd) > #title
+#text:nth-child(2n+1), #text:nth-child(2n+1) > #title
 {
 	margin-left: 20%;
 	text-align: end;
@@ -81,7 +107,7 @@ body
 
 /* Elements in #text (id used with div) */
 
-#text > a, #text > p > a
+#text a
 {
 	color: rgba(255,255,255,0.85);
 	transition: color 2s, padding 1s ease;
@@ -105,6 +131,10 @@ body
 {
 	margin-top: -0.1%;
 	list-style: none;
+}
+
+#text li
+{
 	transition: color 2s;
 }
 
