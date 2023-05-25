@@ -66,6 +66,7 @@ div
 #text
 {
 	border: solid;
+	border-color: #464766;
 
 	/* box style - margin */
 	margin-top: 2.5%;
