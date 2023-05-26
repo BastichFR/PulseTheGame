@@ -4,6 +4,7 @@ body
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+	cursor: none;
 }
 
 div
@@ -14,27 +15,55 @@ div
 	text-align: center;
 
 	/* box style */
-	background-color: #131533;
+	background-color: rgba(19,21,51,0.5);
 	border-radius: 12px;
 	overflow: hidden;
 }
 
 
-/* - * does not seem to work to target ids - */
+@media (hover: none)
+{
+	/* 
+		Catch the mobile devices 
+		(light will not properly work with)
+	*/
+
+	#light
+	{
+		display: none;
+	}
+}
+
+
+/* - * does not seem to work to target ids - 
 #title:hover, #text *:not(ul):hover, #text > #title:hover
 {
 	color: #ffffff;
-}
+} Try to enhance it with js
+*/
+
 
 #text a:hover
 {
 	color: #bbbbff;
+	cursor: none;
 }
 
 #text * > a:hover
 {
 	padding-left: 0.4%;
 	padding-right: 0.3%;
+}
+
+#light
+{
+	background-color: #fffd;
+	box-shadow: 0 0 5px white;
+	border-radius: 50px;
+	position: absolute;
+	height: 80px;
+	width: 80px;
+	pointer-events: none;
 }
 
 
@@ -57,7 +86,7 @@ div
 	color: rgba(255,255,255,0.75);
 	font-weight: 700;
 	text-align: center;
-	transition: color 3s;
+	transition: color 2s;
 
 	/* box style - margin */
 	margin-top: 5%;
@@ -92,13 +121,13 @@ div
 
 /* Used to alternate text-align between paragraphs */
 
-#text:nth-child(2n), #text:nth-child(2n) > #title
+#text:nth-child(2n+1), #text:nth-child(2n+1) > #title
 {
 	margin-right: 20%;
 	text-align: start;
 }
 
-#text:nth-child(2n+1), #text:nth-child(2n+1) > #title
+#text:nth-child(2n), #text:nth-child(2n) > #title
 {
 	margin-left: 20%;
 	text-align: end;
