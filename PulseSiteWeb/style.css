@@ -1,3 +1,8 @@
+::selection
+{
+	background-color: #0000;
+}
+
 body
 {
 	background: linear-gradient(#130833,#000000);
@@ -5,6 +10,7 @@ body
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	cursor: none;
+	overflow-x: hidden;
 }
 
 div
@@ -15,7 +21,7 @@ div
 	text-align: center;
 
 	/* box style */
-	background-color: rgba(19,21,51,0.5);
+	background-color: #13153380;
 	border-radius: 12px;
 	overflow: hidden;
 }
@@ -23,30 +29,29 @@ div
 
 @media (hover: none)
 {
-	/* 
-		Catch the mobile devices 
-		(light will not properly work with)
-	*/
-
-	#light
+	#light 
 	{
 		display: none;
 	}
 }
 
 
-/* - * does not seem to work to target ids - 
-#title:hover, #text *:not(ul):hover, #text > #title:hover
-{
-	color: #ffffff;
-} Try to enhance it with js
-*/
-
-
 #text a:hover
 {
-	color: #bbbbff;
+	color: #bbf;
 	cursor: none;
+}
+
+/*  Cannot select by default the previous element on Firefox, 
+	decided to reduce the effect (and remove it on neighbours)  */
+span:hover
+{
+	color: #fffc;
+}
+
+span
+{
+	transition: color 1s;
 }
 
 #text * > a:hover
@@ -57,20 +62,15 @@ div
 
 #light
 {
-	background-color: #fffd;
+	background-color: #fff8;
 	box-shadow: 0 0 5px white;
-	border-radius: 50px;
+	border-radius: 100px;
 	position: absolute;
-	height: 80px;
 	width: 80px;
+	height: 80px;
 	pointer-events: none;
 }
 
-
-::selection
-{
-	background-color: #0000;
-}
 
 
 /* Different ids */
@@ -149,7 +149,6 @@ div
 	margin-top: 0%;
 	margin-bottom: 0%;
 	padding-bottom: 1%;
-	transition: color 2s;
 }
 
 #text > p:last-child
@@ -178,6 +177,6 @@ div
 
 	/* box style (setting it undo the #title setting) */
 	margin-top: 0%;
-	margin-bottom: 0%;
-	padding-bottom: 2%;
+	margin-bottom: 2%;
+	padding-bottom: 0%;
 }
