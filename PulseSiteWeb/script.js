@@ -20,10 +20,10 @@ document.addEventListener('DOMContentLoaded', function ()
 		while (i < arrayParagraph.length)
 		{
 			// Transform words into span words
-			// Detect link
+			// Detect link (specific case here because there is one link and the next string contains the closure)
 			if (arrayParagraph[i] == "<a")
 			{
-				strParagraph += "<span>" + arrayParagraph[i] + " " + arrayParagraph[i+1] + "</span> ";	
+				strParagraph += arrayParagraph[i] + " " + arrayParagraph[i+1] + " ";	
 				i++;
 			}
 			else

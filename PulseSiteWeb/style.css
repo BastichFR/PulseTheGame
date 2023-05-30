@@ -9,22 +9,11 @@ body
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	cursor: none;
 	overflow-x: hidden;
+
+	cursor: none;
 }
 
-div
-{
-	/* text style */
-	color: rgba(255,255,255,0.6);
-	font-size: 2em;
-	text-align: center;
-
-	/* box style */
-	background-color: #13153380;
-	border-radius: 12px;
-	overflow: hidden;
-}
 
 
 @media (hover: none)
@@ -35,8 +24,13 @@ div
 	}
 }
 
+li
+{
+	margin-top: -0.3%;
+}
 
-#text a:hover
+
+a:hover
 {
 	color: #bbf;
 	cursor: none;
@@ -44,15 +38,23 @@ div
 
 /*  Cannot select by default the previous element on Firefox, 
 	decided to reduce the effect (and remove it on neighbours)  */
-span:hover
+span:hover, td:hover
 {
 	color: #fffc;
 }
 
-span
+body > #title > span:hover
+{
+	color:#fff;
+}
+
+
+span, td
 {
 	transition: color 1s;
 }
+
+
 
 #text * > a:hover
 {
@@ -62,52 +64,59 @@ span
 
 #light
 {
+	pointer-events: none;
+
+	/* box style - background */
 	background-color: #fff8;
-	box-shadow: 0 0 5px white;
 	border-radius: 100px;
+	box-shadow: 0 0 5px white;
+
+	/* box style - position and scale */
 	position: absolute;
 	width: 80px;
 	height: 80px;
-	pointer-events: none;
-}
-
-
-
-/* Different ids */
-
-#title
-{
-	font-size: 7em;
-	margin-bottom: 10%;
-
-	/* Inherit styles */
-
-	/* text style */
-	color: rgba(255,255,255,0.75);
-	font-weight: 700;
-	text-align: center;
-	transition: color 2s;
-
-	/* box style - margin */
-	margin-top: 5%;
 }
 
 #text
 {
+	/* text style */
+	color: #fff9;
+	font-size: 2em;
+	text-align: center;
+
+	/* box style - background */
 	border: solid;
 	border-color: #464766;
+	background-color: #13153380;
+	border-radius: 12px;
+	box-sizing: content-box;
 
-	/* box style - margin */
+	/* box style - margin and padding */
 	margin-top: 2.5%;
 	margin-bottom: 2.5%;
 	margin-left: 5%;
 	margin-right: 5%;
 
-	/* box style - padding */
 	padding-top: 1%;
 	padding-bottom: 0.77%;
 	padding-left: 2.5%;
 	padding-right: 2.5%;
+}
+
+#title
+{
+	/* text style */
+	color: rgba(255,255,255,0.75);
+
+	font-size: 7em;
+	font-weight: 700;
+
+	text-align: center;
+	transition: color 2s;
+
+	/* box style - margin */
+	margin-top: 5%;
+	margin-bottom: 10%;
 }
 
 #text > #title
@@ -135,37 +144,61 @@ span
 
 
 
-/* Elements in #text (id used with div) */
 
-#text a
+a
 {
 	color: rgba(255,255,255,0.85);
 	transition: color 2s, padding 1s ease;
 	text-decoration: none;
 }
 
-#text > p
+#text p
 {
 	margin-top: 0%;
 	margin-bottom: 0%;
 	padding-bottom: 1%;
 }
 
-#text > p:last-child
+td
 {
-	padding-bottom: 2%;
+	white-space: nowrap;
+}
+
+@media (max-width: 1280px)
+{
+	td
+	{
+		font-size: 40%;
+	}
+}
+
+@media (min-width: 1280px)
+{
+	td
+	{
+		font-size: 80%;
+	}
+}
+
+
+
+tr
+{
+	border: 3px solid #fffc;
+}
+
+#text > *:last-child
+{
+	padding-bottom: 1%;
 }
 
 #text > ul
 {
-	margin-top: -0.1%;
+	margin-top: 0%;
+	margin-bottom: 0%;
 	list-style: none;
 }
 
-#text li
-{
-	transition: color 2s;
-}
 
 #text > #title
 {
